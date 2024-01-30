@@ -1,0 +1,26 @@
+.makeSortable {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: magenta 0.125rem solid;
+    padding: 10px;
+    border-radius: 5px;
+
+    .indicator {
+        height: 2px;
+        background-color: rgb(148, 9, 9);
+        transition: width 0.25s ease-in-out;
+        transform-origin: center;
+        animation: grow 0.2s ease-in-out;
+        // z-index: -10;
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
