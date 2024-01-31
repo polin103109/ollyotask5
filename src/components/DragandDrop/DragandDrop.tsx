@@ -9,14 +9,13 @@ interface DragableProps {
 
 export const Dragable = ({
     children,
-   
-    className,
+   className,
     style,
 }: DragableProps) => {
     return (
         <div className={`${styles.draggableWrapper}`}>
             <div className={`${styles.draggable} ${className}`} style={style}>
-                <div className={`${styles.dragHandle} drag-handle`}>
+                <div className={`${styles.dragHandle} draghandle`}>
                 &#x2630;
                     {/* {dragHandle ? dragHandle :<icon></icon>} */}
                 </div>

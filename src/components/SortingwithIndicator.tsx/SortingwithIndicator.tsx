@@ -45,12 +45,13 @@ export const MakeSortable = ({
     const handleOnDrop = useCallback(
         (e: React.DragEvent<HTMLDivElement>) => {
             const dragIndex = Number(e.dataTransfer.getData("text/plain"));
+            console.log(dragIndex)
             const dropIndex = Number(e.currentTarget.dataset.index);
-            const curentDropTargetRect =
-                e.currentTarget.getBoundingClientRect();
+            console.log(dropIndex)
+            const curentDropTargetRect = e.currentTarget.getBoundingClientRect();
+            console.log(curentDropTargetRect)
             const position =
-                e.pageY >
-                curentDropTargetRect.y + curentDropTargetRect.height / 2
+                e.pageY > curentDropTargetRect.y + curentDropTargetRect.height / 2
                     ? "down"
                     : "up";
 
@@ -82,7 +83,7 @@ export const MakeSortable = ({
     useEffect(() => {
         if (currentDragItem !== null) {
             document.body
-                .querySelectorAll(".drag-handle")
+                .querySelectorAll(".draghandle")
                 .forEach((item, index) => {
                     if (index === currentDragItem) {
                         item.parentElement?.parentElement?.setAttribute(
@@ -108,11 +109,10 @@ export const MakeSortable = ({
             setCurrentDragItem(null);
         };
 
-        const dragHandles = document.body.querySelectorAll(".drag-handle");
-        const items = Array.from(
-            document.body.querySelector(".make-sortable")?.children || []
-        ) as HTMLElement[];
-
+        const dragHandles = document.body.querySelectorAll(".draghandle");
+        console.log(dragHandles)
+        const items = Array.from(document.body.querySelector(".make-sortable")?.children || [] ) as HTMLElement[];
+        console.log(items)
         if (dragHandles && items) {
             dragHandles.forEach((item, index) => {
                 item.setAttribute("id", index.toString());

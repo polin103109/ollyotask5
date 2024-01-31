@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border: magenta 0.125rem solid;
+    border:rgb(4, 4, 110) 0.125rem solid;
     padding: 10px;
     border-radius: 5px;
 
     .indicator {
-        height: 2px;
-        background-color: rgb(148, 9, 9);
+       
+        border: rgb(189, 22, 22) 2px  dashed;
         transition: width 0.25s ease-in-out;
         transform-origin: center;
         animation: grow 0.2s ease-in-out;
